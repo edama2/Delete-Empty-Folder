@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let selectURL = panel.url
         print(selectURL!)
         
-        //
+        // aaa
         //theLabel.stringValue = selectURL!.absoluteString
         theLabel.stringValue = selectURL!.path
         theProgress.isIndeterminate = true
