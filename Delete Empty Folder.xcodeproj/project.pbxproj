@@ -36,6 +36,7 @@
 		5E778C8B2B366E750080E633 = {
 			isa = PBXGroup;
 			children = (
+				5E778CA52B366EF50080E633 /* README.md */,
 				5E778C962B366E760080E633 /* Delete Empty Folder */,
 				5E778C952B366E760080E633 /* Products */,
 			);
@@ -57,7 +58,6 @@
 				5E778C9B2B366EAD0080E633 /* MainMenu.xib */,
 				5E778C9E2B366EAE0080E633 /* Info.plist */,
 				5E778C9F2B366EAE0080E633 /* Delete_Empty_Folder.entitlements */,
-				5E778CA52B366EF50080E633 /* README.md */,
 			);
 			path = "Delete Empty Folder";
 			sourceTree = "<group>";
