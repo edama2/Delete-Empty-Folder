@@ -14,11 +14,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var theLabel: NSTextField!
     @IBOutlet weak var theProgress: NSProgressIndicator!
-
-    
-    /*func applicationDidFinishLaunching(_ aNotification: Notification) {
-     // Insert code here to initialize your application
-     }*/
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
@@ -26,27 +21,63 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         
+        //フォルダを選択
         let panel = NSOpenPanel()
         panel.canChooseDirectories = true   // ディレクトリの選択を許可する
         panel.canChooseFiles = false        // ファイルの選択を不可にする
         
         if panel.runModal() == .cancel {
             NSSound(named: "Frog")?.play()
-            return NSApp.terminate(self)
+            NSApp.terminate(self)
+            return
         }
         
         let selectURL = panel.url
         print(selectURL!)
         
-        // aaa
+        // ダイアログで確認
+        let alert = NSAlert()
+        alert.messageText = "Do you want to delete empty folders?"
+        alert.informativeText = "This item will be deleted immediately. You can't undo this action."
+        alert.addButton(withTitle: "Cancel")
+        alert.addButton(withTitle: "OK")
+        //alert.alertStyle = .warning
+        alert.alertStyle = .critical
+
+        alert.buttons[0].tag = NSApplication.ModalResponse.OK.rawValue
+        alert.buttons[1].tag = NSApplication.ModalResponse.cancel.rawValue
+        let result = alert.runModal()
+        if result == .OK {
+            print("tapped: OK")
+            NSApp.terminate(self)
+        } else if result == .cancel {
+            print("tapped: Cancel")
+        } else {
+            print("tapped: Unknown")
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // プログレスウィンドウを準備
         //theLabel.stringValue = selectURL!.absoluteString
         theLabel.stringValue = selectURL!.path
         theProgress.isIndeterminate = true
         theProgress.startAnimation(nil)
-
+        
         window.center()
         window.makeKeyAndOrderFront(self)
-
+        
         return
         //
         let start2 = Date()
@@ -55,6 +86,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let elapsed2 = Date().timeIntervalSince(start2)
         print(elapsed2)
+        
+        //終了を通知
         
         NSSound.beep()
         return NSApp.terminate(self)
