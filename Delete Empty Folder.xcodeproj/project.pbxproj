@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E658CD02B3902BB00F2F15D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E658CCF2B3902BB00F2F15D /* UserNotifications.framework */; };
 		5E778C982B366E760080E633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E778C972B366E760080E633 /* AppDelegate.swift */; };
 		5E778C9A2B366EAD0080E633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E778C992B366EAD0080E633 /* Assets.xcassets */; };
 		5E778C9D2B366EAD0080E633 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E778C9B2B366EAD0080E633 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E658CCF2B3902BB00F2F15D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		5E778C942B366E760080E633 /* Delete Empty Folder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delete Empty Folder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E778C972B366E760080E633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E778C992B366EAD0080E633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,18 +29,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E658CD02B3902BB00F2F15D /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E658CCE2B3902BB00F2F15D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E658CCF2B3902BB00F2F15D /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E778C8B2B366E750080E633 = {
 			isa = PBXGroup;
 			children = (
 				5E778CA52B366EF50080E633 /* README.md */,
 				5E778C962B366E760080E633 /* Delete Empty Folder */,
 				5E778C952B366E760080E633 /* Products */,
+				5E658CCE2B3902BB00F2F15D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
